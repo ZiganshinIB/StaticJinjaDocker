@@ -1,0 +1,16 @@
+FROM python:3.11-slim
+
+RUN apt-get update && \
+    apt-get install -y git && \
+    rm -rf /var/lib/apt/lists/*
+
+ARG TEMPLATE_FOLDER=templates_example
+ENV TEMPLATE_FOLDER=${TEMPLATE_FOLDER}
+
+ARG STATIC_JINJA_VERSION=main  
+RUN git clone --branch ${STATIC_JINJA_VERSION} https://github.com/MrDave/StaticJinjaPlus.git /opt/StaticJinjaPlus
+
+WORKDIR /opt/StaticJinjaPlus
+RUN pip install --no-cache-dir -r requirements.txt
+
+CMD ["sh", "-c", "python main.py --srcpath $TEMPLATE_FOLDER"]
