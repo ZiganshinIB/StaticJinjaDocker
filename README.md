@@ -4,22 +4,26 @@
 1. ПО Docker (любая верция)
 2. ПО Git (любая верция)
 ## Скачивание проекта 
-* ### на основе Ubuntu
+Скачивание происходить с [DockerHub](https://hub.docker.com/r/elzig1999/static-jinja-plus)
 ```shell
-sudo docker pull elzig1999/static-jinja-plus:1.0u
+sudo docker pull elzig1999/static-jinja-plus
 ```
 Запуск
 ```shell
-sudo docker run -it elzig1999/static-jinja-plus:1.0u
+sudo docker run -it elzig1999/static-jinja-plus
 ```
-* ### на основе slim
+Если требуется конкретная версия проекта то при скачивание необходимо указывать тег
+* Образы на основе Ubuntu тег заканчиваются на u `<version>u`
+<br>Пример:
 ```shell
-sudo docker pull elzig1999/static-jinja-plus:1.0-slim
+sudo docker pull elzig1999/static-jinja-plus:1.1u
 ```
-Запуск
+* Образы на основе slim тег заканчиваются на u `<version>-slim`
+<br>Пример:
 ```shell
-sudo docker run -it elzig1999/static-jinja-plus:1.0-slim
+sudo docker pull elzig1999/static-jinja-plus:1.1-slim
 ```
+Актуальные версии смотреть в [DockerHub](https://hub.docker.com/repository/docker/elzig1999/static-jinja-plus/tags)
 ## Запуск с параметрами 
 Можно указывать путь к шаблонам при запуске проекта `srcpath`
 <br>
